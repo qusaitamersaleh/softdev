@@ -1,0 +1,19 @@
+{
+  "name": "softdev",
+  "version": "1.0.0",
+  "description": "softdev interview task",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qusaitamersaleh/softdev.git"
+  },
+  "author": "qusai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qusaitamersaleh/softdev/issues"
+  },
+  "homepage": "https://github.com/qusaitamersaleh/softdev#readme"
+}
