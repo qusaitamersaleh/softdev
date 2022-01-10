@@ -14,6 +14,8 @@ console.log('  MongoDB connected')).catch((err) => console.log(err));
 const AuthorsRoutes = require('./routes/authorRoutes');
 const BooksRoutes = require('./routes/bookRoutes');
 
+app.use(bodyParser.json());
+
 app.use('/books', BooksRoutes);
 app.use('/authors', AuthorsRoutes);
 
