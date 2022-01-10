@@ -6,7 +6,7 @@ const router = express.Router();
 
 // Protect all routes after this middleware
  
-router.post('/create-author', AuthorConroller.createAuthor);
+router.post('/add-author', AuthorConroller.addAuthor);
  
 
 module.exports = router;

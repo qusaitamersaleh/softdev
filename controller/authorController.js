@@ -1,13 +1,11 @@
 
 const AuthorRepo = require('../Repository/authorRepo');
  
-
-const createAuthor =  AuthorRepo.CreateAuthor;
-
+const addAuthor =  AuthorRepo.AddAuthor;
 
 
 
 
 module.exports = {
-    createAuthor
+    addAuthor
 } ;
