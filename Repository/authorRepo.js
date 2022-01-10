@@ -3,7 +3,6 @@ const Author = require('../model/authorModel');
 
 const AddAuthor = async (req, res) => {
 
-
     const {
         first_name,
         last_name,

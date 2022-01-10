@@ -1,15 +1,14 @@
 const mongoose = require('mongoose');
 
 const BookSchema = new mongoose.Schema({
-/*name = models.TextField()
-isbn = models.TextField()
-author = models.ForeignKey(Author)*/
+ 
 
     name: {
         type: String,
         required: true
     },
-    isbn: {
+    isbn: {// if it's not text in the requirment would make it Mongoose objectID
+        index: true,
         type: String,
         required: true
     },
