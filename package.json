@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/qusaitamersaleh/softdev/issues"
   },
-  "homepage": "https://github.com/qusaitamersaleh/softdev#readme"
+  "homepage": "https://github.com/qusaitamersaleh/softdev#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }
