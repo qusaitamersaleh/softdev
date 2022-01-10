@@ -6,14 +6,8 @@ const dotenv = require('dotenv');
 
 const app = express();
 dotenv.config({ path: './config.env' });
-
-mongoose.connect(process.env.mongoURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-
-}).then(() => 
+ 
+mongoose.connect(process.env.mongoURI).then(() => 
 console.log('  MongoDB connected')).catch((err) => console.log(err));
 
 
