@@ -6,10 +6,7 @@ const router = express.Router();
 
 // Protect all routes after this middleware
  
-router.post('/send-message', chatC.sendMessage);
- 
-const router = express.Router();
-
+router.post('/create-author', AuthorConroller.createAuthor);
  
 
 module.exports = router;
