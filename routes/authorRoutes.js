@@ -9,6 +9,7 @@ const router = express.Router();
 router.post('/add-author', AuthorConroller.addAuthor);
 router.get('/get-authors', AuthorConroller.getAuthors);
 router.get('/get-author/:id', AuthorConroller.getAuthorDetails);
+router.patch('/edit-author/:id', AuthorConroller.editAuthor);
 
 
 module.exports = router;

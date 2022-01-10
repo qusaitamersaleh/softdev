@@ -54,8 +54,26 @@ const GetAuthorDetails = async (req, res) => {
     });
 }
 
+const EditAuthor = async (req, res) => {
+// validation if ID exist and type of ID
+    Author.findByIdAndUpdate(req.params.id, {
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+    }
+    ).then((author) => {
+        if(author)return res.status(200).json({
+            author
+        });
+        else 
+        return res.status(404).json({
+           error: "user not found!"
+        });
+    });
+
+}
 module.exports = {
     AddAuthor,
     GetAuthors,
-    GetAuthorDetails
+    GetAuthorDetails,
+    EditAuthor
 }
