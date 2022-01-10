@@ -32,16 +32,8 @@ const AddBook = async (req, res) => {
 
 }
 
-const GetBooks = async (req, res) => {
-    return res.status(200).json({
-        Books: await Book.find()
-    });
-};
-const GetBookDetails = async (req, res) => { };
-const EditBook = async (req, res) => { };
-
-
+ 
 
 module.exports = {
-    AddBook, GetBooks, GetBookDetails, EditBook
+    AddBook 
 }

@@ -32,27 +32,8 @@ const AddAuthor = async (req, res) => {
 
 
 }
-
-const GetAuthors = async (req, res) => {
-    return res.status(200).json({
-        Authors: await Author.find()
-    });
-}
-
-const GetAuthorDetails = async (req, res) => {
-
-    const author = await Author.findById(req.params.id);
-
-    if (!author)
-        return res.status(404).json({
-            error: "Author not found !"
-        });
-
-    return res.status(200).json({
-        author
-    });
-}
-
+ 
+/*
 const EditAuthor = async (req, res) => {
 // validation if ID exist and type of ID
     Author.findByIdAndUpdate(req.params.id, {
@@ -69,10 +50,8 @@ const EditAuthor = async (req, res) => {
         });
     });
 
-}
+}*/
 module.exports = {
-    AddAuthor,
-    GetAuthors,
-    GetAuthorDetails,
-    EditAuthor
+    AddAuthor
+
 }
