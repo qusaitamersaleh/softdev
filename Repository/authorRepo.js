@@ -1,7 +1,7 @@
 
 const Author = require('../model/authorModel');
 
-const AddAuthor = async(req, res) => {
+const AddAuthor = async (req, res) => {
 
 
     const {
@@ -34,8 +34,28 @@ const AddAuthor = async(req, res) => {
 
 }
 
+const GetAuthors = async (req, res) => {
+    return res.status(200).json({
+        Authors: await Author.find()
+    });
+}
+
+const GetAuthorDetails = async (req, res) => {
+
+    const author = await Author.findById(req.params.id);
+
+    if (!author)
+        return res.status(404).json({
+            error: "Author not found !"
+        });
+
+    return res.status(200).json({
+        author
+    });
+}
 
 module.exports = {
-    AddAuthor
-
+    AddAuthor,
+    GetAuthors,
+    GetAuthorDetails
 }
