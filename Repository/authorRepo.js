@@ -15,7 +15,6 @@ const AddAuthor = async (req, res) => {
     });
 
     if (author) {
-
         return res.status(400).json({
             error: 'Authoer aldready exist in the website',
         });

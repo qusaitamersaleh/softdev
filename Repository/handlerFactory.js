@@ -12,7 +12,8 @@ const getAll = Model => async (req, res, next) => {
     data: doc
 
   });
-};
+}
+
 const getOne = Model => async (req, res, next) => {
 
 
@@ -36,7 +37,8 @@ const getOne = Model => async (req, res, next) => {
   } catch (e) {
     return res.send(e.message);
   }
-};
+}
+
 const updateOne = Model => async (req, res, next) => {
   try {
 
@@ -57,7 +59,7 @@ const updateOne = Model => async (req, res, next) => {
   } catch (error) {
     return res.send(error.message);
   }
-};
+}
 
 module.exports = {
   getAll,
