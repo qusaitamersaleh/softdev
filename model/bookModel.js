@@ -21,6 +21,17 @@ const BookSchema = new mongoose.Schema({
 });
 
 
+BookSchema.pre(/^find/, function (next) {
+
+    this.populate({
+      path: 'author',
+      select: 'first_name last_name',
+  
+    });
+  
+    next();
+  });
+
 const Book = mongoose.model('book', BookSchema);
 
 module.exports = Book;
