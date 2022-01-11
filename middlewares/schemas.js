@@ -5,7 +5,7 @@ const addAuthor = Joi.object({
     last_name: Joi.string().min(1).max(10).required()
 
 })
-const editAuthor = Joi.object({
+const editAuthor = Joi.object({ 
     first_name: Joi.string().min(1).max(10).required(),
     last_name: Joi.string().min(1).max(10).required()
     // id:Joi.objectId()
@@ -13,13 +13,13 @@ const editAuthor = Joi.object({
 const addBook = Joi.object({
     name: Joi.string().min(1).max(30).required(),
     isbn: Joi.string().min(1).max(9999999999999).required(),
-    author: Joi.objectId()
+    //author: Joi.objectId()
 
 })
 const editBook = Joi.object({
     name: Joi.string().min(1).max(30).required(),
     isbn: Joi.string().min(1).max(9999999999999).required(),
-    id: Joi.objectId()
+   // id: Joi.objectId()
 
 })
 /*
