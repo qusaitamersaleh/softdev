@@ -1,3 +1,5 @@
+const { model } = require("mongoose");
+
 const getAll = Model => async (req, res, next) => {
 
   let filter = {};
@@ -41,7 +43,8 @@ const getOne = Model => async (req, res, next) => {
 
 const updateOne = Model => async (req, res, next) => {
   try {
-
+      
+       
     const doc = await Model.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true

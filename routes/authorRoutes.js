@@ -9,7 +9,7 @@ const router = express.Router();
 
 // Protect all routes after this middleware
  
-router.post('/add-author',AuthorConroller.addAuthor);
+router.post('/add-author',validateRequest,AuthorConroller.addAuthor);
 router.get('/get-authors', AuthorConroller.getAuthors);
 router.get('/get-author/:id', AuthorConroller.getAuthorDetails);
 router.put('/edit-author/:id', AuthorConroller.editAuthor);

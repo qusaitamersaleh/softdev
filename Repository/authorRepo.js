@@ -22,7 +22,7 @@ const AddAuthor = async (req, res) => {
     Author.create({
         first_name,
         last_name,
-    }).then((author) => {
+    },).then((author) => {
         return res.status(200).json({
             author
         });
