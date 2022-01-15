@@ -26,6 +26,7 @@
     "joi": "^17.5.0",
     "lodash": "^4.17.21",
     "mongoose": "^6.1.5",
+    "random-name": "^0.1.2",
     "supertest": "^6.2.1"
   },
   "devDependencies": {

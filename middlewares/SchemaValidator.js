@@ -5,7 +5,9 @@ const validator = (schema) => (req, res, next) => {
     if (!error)
         next();
     else {
-        return res.status(400).send(error.message);
+        return res.status(400).json({
+            error : error.message
+        });
     }
 }
 
