@@ -1,18 +1,17 @@
 const express = require('express');
 const AuthorConroller = require('../controller/authorController');
 
-const SchemaValidator = require('../middlewares/SchemaValidator');
-const validateRequest = SchemaValidator(true);
+const { addAuthor ,editAuthor} = require('../middlewares/schemas');
+const  validator  = require('../middlewares/schemaValidator');
 
 const router = express.Router();
 
+router.post('/add-author', validator(addAuthor), AuthorConroller.addAuthor);
 
-// Protect all routes after this middleware
- 
-router.post('/add-author',validateRequest,AuthorConroller.addAuthor);
+
 router.get('/get-authors', AuthorConroller.getAuthors);
 router.get('/get-author/:id', AuthorConroller.getAuthorDetails);
-router.put('/edit-author/:id', AuthorConroller.editAuthor);
-
-
+router.put('/edit-author/:id',validator(editAuthor), AuthorConroller.editAuthor);
+ 
 module.exports = router;
+

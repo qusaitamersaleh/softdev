@@ -1,19 +1,24 @@
-const { model } = require("mongoose");
+const Model = require("mongoose");
+const APIFeatures = require('./../utils/apiFeatures');
 
 const getAll = Model => async (req, res, next) => {
 
-  let filter = {};
-  if (req.params.userType) filter = { userType: req.params.userType }
-
-  const doc = await Model.find(filter);
+  const features = new APIFeatures(Model.find(), req.query)
+    .limitFields()
+    .paginate();
+  // const doc = await features.query.explain();
+  const doc = await features.query;
 
   // SEND RESPONSE
   res.status(200).json({
     status: 'success',
     results: doc.length,
     data: doc
-
+ 
   });
+
+
+
 }
 
 const getOne = Model => async (req, res, next) => {
@@ -43,8 +48,8 @@ const getOne = Model => async (req, res, next) => {
 
 const updateOne = Model => async (req, res, next) => {
   try {
-      
-       
+
+
     const doc = await Model.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true

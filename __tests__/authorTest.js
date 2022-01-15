@@ -1,7 +1,7 @@
 
 const app = require('../app');
 const request = require('supertest');
-jest.setTimeout(1000000)
+jest.setTimeout(1000000);
 
 //const faker = require('faker');
 
@@ -10,9 +10,6 @@ describe(' adding auhtor ', function () {
     describe('adding author that is not exist in DB  ', () => {
         test('should response with Status 200', async () => {
 
-            //    var author_firstName = faker.name.findName().split(' ').slice(0, 1).join(' ');
-            //  var author_last = faker.name.findName().split(' ').slice(0, 1).join(' ');
-            //**** need some code  */
             const response = await request(app).post('/authors/add-author').send(
                 {
                     first_name: 'grg',
