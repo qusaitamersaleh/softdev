@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 const dotenv = require('dotenv');
+const cors = require('cors');
 
 const app = express();
 dotenv.config({ path: './config.env' });
@@ -14,6 +15,8 @@ console.log('  MongoDB connected')).catch((err) => console.log(err));
 const AuthorsRoutes = require('./routes/authorRoutes');
 const BooksRoutes = require('./routes/bookRoutes');
 
+// Middlewares
+app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/books', BooksRoutes);
