@@ -10,32 +10,32 @@ const addAuthor = data => {
 }
 
 const editAuthor = data => {
-    Joi.object({
+    const schema = Joi.object({
         first_name: Joi.string().min(1).max(10).required(),
         last_name: Joi.string().min(1).max(10).required()
-      //  id: Joi.objectId().required()
+        
     })
+    return schema.validate(data);
 }
+
+//books
 const addBook = data => {
-    Joi.object({
+    const schema = Joi.object({
         name: Joi.string().min(1).max(30).required(),
         isbn: Joi.string().min(1).max(9999999999999).required(),
-        //author: Joi.objectId()
-
+        authorID:Joi.string().required(),
     })
+    return schema.validate(data);
 }
 const editBook = data => {
-    Joi.object({
+    const schema = Joi.object({
         name: Joi.string().min(1).max(30).required(),
         isbn: Joi.string().min(1).max(9999999999999).required(),
-      
 
     })
+    return schema.validate(data);
 }
-/*
-const addBook = Joi.object({
  
-});*/
 
 module.exports = {
     addAuthor,

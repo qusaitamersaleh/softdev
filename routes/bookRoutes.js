@@ -1,7 +1,7 @@
 const express = require('express');
 const BookConroller = require('../controller/bookController');
 
-const { addBook, editBook, } = require('../middlewares/schemas');
+const { addBook, editBook } = require('../middlewares/schemas');
 const validator = require('../middlewares/schemaValidator');
 
 const router = express.Router();
